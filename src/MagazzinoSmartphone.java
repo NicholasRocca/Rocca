@@ -60,6 +60,7 @@ public class MagazzinoSmartphone {
 
     public Smartphone[] getSmartphonesArray() {
         Smartphone[] smartphoneArray = new Smartphone[count];
+        
         System.arraycopy(smartphones, 0, smartphoneArray, 0, count);
         return smartphoneArray;
     }
@@ -153,8 +154,9 @@ public class MagazzinoSmartphone {
                     if(mg.smartphones[i]!=null && this.smartphones[i]!=null){
                         if (!((mg.smartphones[i].equals(this.smartphones[i])))) {
                             diversi=true;
-                        } else {i++;}
-                    }else {i++;}
+                        }
+                    }
+                    i++;
                 }
                 if(!diversi){
                     verifica=true;
