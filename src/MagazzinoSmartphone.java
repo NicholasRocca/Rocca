@@ -142,9 +142,26 @@ public class MagazzinoSmartphone {
     }
 
     public boolean equals(Object obj) {
-       
+        boolean verifica=false;
+        if(this==obj){
+        verifica=true;
+       } else if (obj instanceof MagazzinoSmartphone) {
+                MagazzinoSmartphone mg = (MagazzinoSmartphone) obj;
+                boolean diversi=false;
+                int i =0;
+                while(i<mg.count && diversi ==false){
+                    if(mg.smartphones[i]!=null && this.smartphones[i]!=null){
+                        if (!((mg.smartphones[i].equals(this.smartphones[i])))) {
+                            diversi=true;
+                        } else {i++;}
+                    }else {i++;}
+                }
+                if(!diversi){
+                    verifica=true;
+                }
+       }
 
-        return true;
+        return verifica;
     }
 
 
