@@ -8,12 +8,12 @@ public class MagazzinoSmartphone {
     }
 
     public MagazzinoSmartphone(MagazzinoSmartphone other) {
-        MagazzinoSmartphone magazzinoSmartphone = new MagazzinoSmartphone();
         Smartphone smartphone= null;
+        this.smartphones=new Smartphone[10];
         for (int i = 0; i < other.smartphones.length; i++) {
             if(other.smartphones[i]!=null){
                 smartphone=new Smartphone(other.smartphones[i]);
-                magazzinoSmartphone.addSmartphone(smartphone);
+                this.addSmartphone(smartphone);
             }
         }
 
@@ -26,7 +26,7 @@ public class MagazzinoSmartphone {
     public void addSmartphone(Smartphone smartphone) {
         if(smartphone!=null){
             if(count<10){
-                this.smartphones[count+1]=new Smartphone(smartphone);
+                this.smartphones[count]=new Smartphone(smartphone);
                 
                 count++;
             }
@@ -44,6 +44,7 @@ public class MagazzinoSmartphone {
                         if (smartphones[i].equals(smartphone)) {
                         smartphones[i]=null;
                        find=true;
+                       count--;
                             }else{
                                 i++;
                             }
@@ -127,7 +128,7 @@ public class MagazzinoSmartphone {
     @Override
     public String toString() {
         String result = "\nMagazzinoSmartphone:\n";
-        for (int i = 0; i < smartphones.length; i++) {
+        for (int i = 0; i < this.smartphones.length; i++) {
             if(smartphones[i]!=null){
                 result+=smartphones[i].toString() +"\n";
                 

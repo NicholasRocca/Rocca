@@ -38,6 +38,7 @@ System.out.println("smartphone1.toString()");
 System.out.println(smartphone1); 
 // Generate test cases for costruttore di copia
 MagazzinoSmartphone magazzinoSmartphone2 = new MagazzinoSmartphone(magazzinoSmartphone);
+
 System.out.println(magazzinoSmartphone2);
 // Generate test cases for equals method in MagazzinoSmartphone
 System.out.println(magazzinoSmartphone.equals(magazzinoSmartphone2)); // true
